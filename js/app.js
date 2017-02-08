@@ -1,6 +1,6 @@
 $(document).ready(function () {
     console.log("wesh");
-    // alert("bienvenue!")
+    alert("bienvenue!");
 
     $("#button").click(function () {
         var task = $("#newTask").val();
