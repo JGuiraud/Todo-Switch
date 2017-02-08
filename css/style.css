@@ -6,8 +6,6 @@ body {
     /* pour une solution de rechange*/
     background-color: coral;
     /*sera au dessus si navigateur compatible*/
-    background-image: linear-gradient(to right coral,red 10%, yellow 10%
-    );
 }
 
 li {

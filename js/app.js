@@ -1,20 +1,35 @@
 $(document).ready(function () {
-    console.log("wesh");
-    alert("bienvenue!");
 
     $("#button").click(function () {
         var task = $("#newTask").val();
-        console.log(task);
-        $("#todoUl").append("<li><input class='checkbox' type='checkbox'>" + task + "</li>");
+
+        $("#todoUl").append("<li><input id='notchecked' type='checkbox'>" + task + "</li>");
+        $('#todoUl').on("change", ":checkbox", function () {
+            if (this.checked) {
+                $($(this).parent()).css("text-decoration", "line-through")
+                $($(this).attr("id", "checked"));
+            } else {
+                $($(this).parent()).css("text-decoration", "none")
+                $($(this).attr("id", "notchecked"));
+            }
+        });
     })
-    /*pas compris a ce niveau lesly */
-    /*!!!!!!!!!!!!!!!! marche pas encore !!!!!!!!!!!!!!!!!!!!! */
-    $(":checkbox").change(function () {
 
-        alert("check")
-        console.log("checked")
-        //Do stuff
 
-    });
+    $("#select").change(function () {
+        console.log(this.value);
+        if (this.value == 1) {
+            $("li #checked").parent().hide();
+            $("li #notchecked").parent().show()
+        }
+        if (this.value == 2) {
+            $("li #checked").parent().show();
+            $("li #notchecked").parent().hide()
+        }
+        if (this.value == 0) {
+            $("li #checked").parent().show();
+            $("li #notchecked").parent().show()
+        }
+    })
 
 });
