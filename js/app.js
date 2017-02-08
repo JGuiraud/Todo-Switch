@@ -19,6 +19,7 @@ $(document).ready(function () {
     $("#select").change(function () {
         console.log(this.value);
         if (this.value == 1) {
+            console.log($("#checked").parent())
             $("li #checked").parent().hide();
             $("li #notchecked").parent().show()
         }
@@ -31,5 +32,8 @@ $(document).ready(function () {
             $("li #notchecked").parent().show()
         }
     })
+
+
+
 
 });
