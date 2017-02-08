@@ -4,10 +4,10 @@ $(document).ready(function () {
 
     $("#button").click(function () {
         var task = $("#newTask").val();
-        console.log(task)
+        console.log(task);
         $("#todoUl").append("<li><input class='checkbox' type='checkbox'>" + task + "</li>");
     })
-
+    /*pas compris a ce niveau lesly */
     /*!!!!!!!!!!!!!!!! marche pas encore !!!!!!!!!!!!!!!!!!!!! */
     $(":checkbox").change(function () {
 
