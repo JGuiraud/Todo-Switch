@@ -2,7 +2,6 @@ $(document).ready(function () {
     console.log("wesh");
     // alert("bienvenue!")
 
-
     $("#button").click(function () {
         var task = $("#newTask").val();
         console.log(task)
@@ -11,11 +10,11 @@ $(document).ready(function () {
 
     /*!!!!!!!!!!!!!!!! marche pas encore !!!!!!!!!!!!!!!!!!!!! */
     $(":checkbox").change(function () {
-        if (this.checked) {
-            alert("check")
-            console.log("checked")
-            //Do stuff
-        }
+
+        alert("check")
+        console.log("checked")
+        //Do stuff
+
     });
 
 });
