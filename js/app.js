@@ -1,5 +1,12 @@
 $(document).ready(function () {
 
+    $("#newTask").keypress(function (e) {
+        var key = e.which;
+        if (key == 13) {
+            $("#new").click();
+        }
+    });
+
     $("#new").click(function () {
         var task = $("#newTask").val();
         if (task != 0) {
