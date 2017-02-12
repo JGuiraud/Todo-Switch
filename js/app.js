@@ -1,25 +1,23 @@
 $(document).ready(function () {
 
-    $("#button").click(function () {
+    $("#new").click(function () {
         var task = $("#newTask").val();
-
-        $("#todoUl").append("<li><input id='notchecked' type='checkbox'>" + task + "</li>");
-        $('#todoUl').on("change", ":checkbox", function () {
-            if (this.checked) {
-                $($(this).parent()).css("text-decoration", "line-through")
-                $($(this).attr("id", "checked"));
-            } else {
-                $($(this).parent()).css("text-decoration", "none")
-                $($(this).attr("id", "notchecked"));
-            }
-        });
-    })
-
+        if (task != 0) {
+            $("#todoUl").append("<li><input id='notchecked' type='checkbox'>" + task + "</li>");
+            $('#todoUl').on("change", ":checkbox", function () {
+                if (this.checked) {
+                    $(this).parent().addClass("lineThrough")
+                    $(this).attr("id", "checked");
+                } else {
+                    $(this).parent().removeClass("lineThrough")
+                    $(this).attr("id", "notchecked");
+                }
+            });
+        }
+    });
 
     $("#select").change(function () {
-        console.log(this.value);
         if (this.value == 1) {
-            console.log($("#checked").parent())
             $("li #checked").parent().hide();
             $("li #notchecked").parent().show()
         }
@@ -31,9 +29,10 @@ $(document).ready(function () {
             $("li #checked").parent().show();
             $("li #notchecked").parent().show()
         }
-    })
+    });
 
-
-
+    $("#delete").click(function () {
+        $("li #checked").parent().remove();
+    });
 
 });
